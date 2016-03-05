@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "All Firings";
+}
+
+@section scripts {
+    <script src="~/App/Firings/AppFiring.js"></script>
+    <script src="~/App/Firings/ViewModels/RootViewModel.js"></script>
+    <script src="~/App/Firings/ViewModels/FiringHomeViewModel.js"></script>
+    <script src="~/App/Firings/ViewModels/FiringListViewModel.js"></script>
+    <script src="~/App/Firings/ViewModels/FiringViewModel.js"></script>
+}
+@section jsCode{
+    angular.bootstrap(document.getElementById("firing"), ['firing']);
+}
+
+<div ng-non-bindable>
+    <div id="firing" ng-controller="rootViewModel">
+        <h2>{{pageHeading}}</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ng-click="firingList()">Firing List</button>
+            </div>
+            <div class="col-md-4">
+                <button call="btn btn-primary" ng-click="showFiring()">Show Firing</button>
+                <input type="text" ng-model="firingService.firingId" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
